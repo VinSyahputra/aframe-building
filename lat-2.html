@@ -71,24 +71,50 @@
 
         <!-- RUANGAN SELATAN SISI BARAT -->
         <a-entity id="barat-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="-25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
-          <a-box position=".35 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+          <a-box position=".40 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+          </a-box>
+          <a-box position="0 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+          </a-box>
+          <a-box position="-.40 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
           </a-box>
         </a-entity>
 
         <!-- RUANGAN UTARA SISI BARAT -->
-        <a-box position="-24 4 -11" scale="18 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;"></a-box>
+        <a-box position="-30 4 -11" scale="25 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 .5" scale=".18 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              </a-entity>
+              <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".35 -.25 .5" scale=".18 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              </a-entity>
+        </a-box>
       
 
         <!-- RUANGAN SELATAN SISI TIMUR -->
         <a-entity id="timur-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
-          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 -.5" scale=".12 .5 .02">
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.40 -.25 -.5" scale=".12 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+          </a-entity>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="0 -.25 -.5" scale=".12 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+          </a-entity>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".40 -.25 -.5" scale=".12 .5 .02">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
           </a-entity>
         </a-entity>
 
         <!-- RUANGAN UTARA SISI TIMUR -->
-        <a-box position="24 4 -11" scale="18 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" ></a-box>
+        <a-box position="30 4 -11" scale="25 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" >
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 .5" scale=".18 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              </a-entity>
+              <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".35 -.25 .5" scale=".18 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              </a-entity>
+        </a-box>
     
 
         <!-- tiang -->
@@ -98,42 +124,60 @@
 
         
         <!-- tembok -->
-        <a-box position="0 4 -15" scale="90 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
+        <a-box position="0 4 -15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
             <a-box position="0 -.25 .5" scale=".08 .5 .2" color="#fff"></a-box>
         </a-box>
 
-        <a-box position="0 4 15" scale="90 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
+        <a-box position="0 4 15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
           <a-box position="0 -.25 -.5" scale=".08 .5 .2" color="#fff"></a-box>
         </a-box>
         
-        <a-box position="-45 4 0" scale=".5 8 30">
-            <a-box position=".5 -.3 -.2" scale=".2 .5 0.09" color="silver">
-              <a-box position=".55 0 0" scale=".5 1 .02" color="black"></a-box>
+        <a-box position="-50 4 0" scale=".25 8 30"></a-box>
+        <a-box position="50 4 0" scale=".25 8 30"></a-box>
+
+        <a-box position="-48.25 4 -5.5" scale="3.5 8 8">
+            <a-box position=".5 -.25 0" scale=".05 .5 .5" color="silver">
+              <a-box position=".55 0 0" scale=".1 1 .02" color="black"></a-box>
+            </a-box>
+        </a-box>
+        <a-box position="48.25 4 -5.5" scale="3.5 8 8">
+            <a-box position="-.5 -.25 0" scale=".05 .5 .5" color="silver">
+              <a-box position="-.55 0 0" scale=".1 1 .02" color="black"></a-box>
             </a-box>
         </a-box>
 
-        <a-box position="45 4 0" scale=".5 8 30">
-          <a-box position="-.5 -.3 -.2" scale=".2 .5 0.09" color="silver">
-            <a-box position="-.55 0 0" scale=".5 1 .02" color="black"></a-box>
-          </a-box>
-        </a-box>
+        <a-box position="-48.25 4 9.75" scale="3.5 8 10"></a-box>
+        <a-box position="48.25 4 9.75" scale="3.5 8 10"></a-box>
 
+        
         <!-- TANGGA SAMPING -->
         <a-entity
             gltf-model="url(assets/tangga-samping.glb)"
-            material="color: #ff1"
-            position="-42 0 0"
+            material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+            shadow="receive: true"
+            position="-47 0 0"
             rotation="0 90 0"
             scale="1 1 1">
         </a-entity>
+        <a-entity
+            gltf-model="url(assets/tangga-samping.glb)"
+            material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+            shadow="receive: true"
+            position="47 0 0"
+            rotation="0 -90 0"
+            scale="1 1 1">
+        </a-entity>
         <!-- LANTAI -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="90" height="30" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: keramik.jpg; repeat: 80 40 "></a-plane>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="30" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: keramik.jpg; repeat: 80 40 "></a-plane>
         
         <!-- LAMPU --> 
         <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2; castShadow:true;" position="1 3 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 30; decay: 2; castShadow:true;" position="-45 3 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 30; decay: 2; castShadow:true;" position="45 3 1"></a-entity>
         <a-entity light="type: ambient; color: #fff; intensity: .6"></a-entity>
 
         
+        <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
         <a-camera></a-camera>
       </a-scene>
 
