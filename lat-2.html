@@ -55,36 +55,23 @@
 
       <a-assets>
         <a-asset-item id="lift" src="assets/lift.glb"></a-asset-item>
+        <a-asset-item id="tanggaSamping" src="assets/tangga-samping.glb"></a-asset-item>
       </a-assets>
 
-
-      <!-- lift -->
-      <!-- <a-box position="0 4 -6.5" scale="6 8 4" color="#333" geometry-merger="preserveOriginal: false">
-
-        <a-box position="0 -0.35 -.5" scale="0.035 0.03 0.05"></a-box>
-
-        <a-box position="-0.2 -0.35 -.5" color="silver" scale="0.3 0.3 0.05">
-          <a-box position="0 0 -.5" scale="0.01 1 .05" color="#333"></a-box>
-        </a-box>
-
-        <a-box position=".2 -0.35 -.5" color="silver" scale="0.3 0.3 0.05">
-          <a-box position="0 0 -.5" scale="0.01 1 .05" color="#333"></a-box>
-        </a-box>
-
-      </a-box> -->
       <a-entity
         gltf-model="#lift"
         position="0 0 0"
         scale="1 1 1">
       </a-entity>
 
-        <a-entity tangga id="tangga"></a-entity>
-        <a-entity position="-1.5 .25 -2.2" scale="3 .5 .5" id="instance" geometry="primitive: box" material="color:#eee" instanced-mesh></a-entity>
+        <a-entity tangga id="tangga">
+            <a-entity position="-1.5 .25 -2.2" scale="3 .5 .5" id="instance" geometry="primitive: box" material="color:#eee" instanced-mesh></a-entity>
+        </a-entity>
       
 
         <!-- RUANGAN SELATAN SISI BARAT -->
         <a-entity id="barat-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="-25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
-          <a-box position=".35 -.25 -.5" scale=".15 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+          <a-box position=".35 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
           </a-box>
         </a-entity>
@@ -95,7 +82,7 @@
 
         <!-- RUANGAN SELATAN SISI TIMUR -->
         <a-entity id="timur-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
-          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 -.5" scale=".15 .5 .02">
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 -.5" scale=".12 .5 .02">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
           </a-entity>
         </a-entity>
@@ -132,14 +119,13 @@
         </a-box>
 
         <!-- TANGGA SAMPING -->
-        <a-entity id="tangga-samping" geometry="primitive: box" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#fff" geometry-merger="preserveOriginal: false" scale="3 .5 .5" position="-42 .25 0" rotation="0 90 0">
-          <a-entity material="color: #fff" geometry="primitive:box" instance-mesh-member="mesh:tangga-samping" position="0 1 -1" scale="1 1 1"></a-entity>
-          <a-entity material="color: #fff" geometry="primitive:box" instance-mesh-member="mesh:tangga-samping" position="0 2 -2" scale="1 1 1"></a-entity>
-          <a-entity material="color: #fff" geometry="primitive:box" instance-mesh-member="mesh:tangga-samping" position="0 3 -3" scale="1 1 1"></a-entity>
-          <a-entity material="color: #fff" geometry="primitive:box" instance-mesh-member="mesh:tangga-samping" position="0 4 -4" scale="1 1 1"></a-entity>
-          <a-entity material="color: #fff" geometry="primitive:box" instance-mesh-member="mesh:tangga-samping" position="0 5 -5" scale="1 1 1"></a-entity>
+        <a-entity
+            gltf-model="url(assets/tangga-samping.glb)"
+            material="color: #ff1"
+            position="-42 0 0"
+            rotation="0 90 0"
+            scale="1 1 1">
         </a-entity>
-
         <!-- LANTAI -->
         <a-plane position="0 0 0" rotation="-90 0 0" width="90" height="30" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: keramik.jpg; repeat: 80 40 "></a-plane>
         
