@@ -37,6 +37,7 @@
 
       <a-assets>
         <a-asset-item id="lift" src="../assets/lift.glb"></a-asset-item>
+        <a-asset-item id="papan" src="../assets/papan.gltf"></a-asset-item>
         <a-asset-item id="eskalator" src="../assets/eskalator.glb"></a-asset-item>
         <a-asset-item id="pintu" src="../assets/Glass Door/Glass Door.obj"></a-asset-item>
         <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
@@ -66,88 +67,39 @@
         rotation="0 180 0"
         scale="1.2 1 1">
       </a-entity>
-      
-      <!-- ESKALATOR -->
+
+      <!-- PAPAN -->
       <a-entity
-        gltf-model="#eskalator"
-        position="-.5 -.3 0"        
-        scale="1 1 1"
-        shadow="receive: true"
-        color="green">
+        gltf-model="#papan"
+        position="10 0 -4"
+        rotation="0 90 0"
+        scale=".8 .8 .8">
       </a-entity>
-
-       <a-entity
-        gltf-model="#eskalator"
-        position="4 -.3 0"        
-        scale="1 1 1"
-        shadow="receive: true"
-        material="color: red"
-        color="green">
-      </a-entity>
-
-      <!-- PINTU KACA DEPAN -->
       <a-entity
-        obj-model="obj: #pintu; mtl: url(../assets/Glass Door/Glass Door.mtl)"
-        position="-1.5 -.1 24.7"       
-        scale=".2 .2 .1"
-        shadow="receive: true"
-        material="color: #fff">
-        <a-box position="0 12.5 0" scale="16 23.5 .5" color="#aaa" ></a-box>
+        gltf-model="#papan"
+        position="-10 0 -4"
+        rotation="0 90 0"
+        scale=".8 .8 .8">
       </a-entity>
-
       <a-entity
-        obj-model="obj: #pintu; mtl: url(../assets/Glass Door/Glass Door.mtl)"
-        position="1.75 -.1 24.7"
-        rotation="0 180 0"       
-        scale=".2 .2 .1"
-        shadow="receive: true"
-        material="color: #fff">
-        <a-box position="0 12.5 0" scale="16 23.5 .5" color="#aaa" ></a-box>
+        gltf-model="#papan"
+        position="0 0 4"
+        rotation="0 -90 0"
+        scale=".8 .8 .8">
       </a-entity>
-
-      <!-- PINTU KACA BELAKANG -->
-      <a-entity
-        obj-model="obj: #pintu; mtl: url(../assets/Glass Door/Glass Door.mtl)"
-        position="-1.5 -.1 -24.7"       
-        scale=".2 .2 .1"
-        shadow="receive: true"
-        material="color: #fff">
-        <a-box position="0 12.5 0" scale="16 23.5 .5" color="#aaa" ></a-box>
-      </a-entity>
-
-      <a-entity
-        obj-model="obj: #pintu; mtl: url(../assets/Glass Door/Glass Door.mtl)"
-        position="1.75 -.1 -24.7"
-        rotation="0 180 0"       
-        scale=".2 .2 .1"
-        shadow="receive: true"
-        material="color: #fff">
-        <a-box position="0 12.5 0" scale="16 23.5 .5" color="#aaa" ></a-box>
-      </a-entity>
-
-      <!-- PEMBATAS ESKALATOR -->
-      <a-box  scale="0.2 1 8.95305" position="4.5 0.5 -1.5" rotation="" shadow="receive: true"></a-box>
-      <a-box  scale="0.2 1 8.95305" position="-4.5 0.5 -1.5" rotation="" shadow="receive: true"></a-box>
-      <a-box  scale="1.2 1 0.2" position="4 0.5 3" shadow="receive: true"></a-box>
-      <a-box  scale="1.2 1 0.2" position="-4 0.5 3" shadow="receive: true"></a-box>
-      <a-box  scale="1.2 1 0.2" position="4 0.5 -6" shadow="receive: true"></a-box>
-      <a-box  scale="1.2 1 0.2" position="-4 0.5 -6" shadow="receive: true"></a-box>
 
      
       <!-- TIANG BULAT -->
       <a-entity position="0 0 0" instanced-mesh id="tiangBulat" material="shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true">
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="0 4 -4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="0 4 4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="0 4 16" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="10 4 -4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="10 4 4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="-10 4 -4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
-          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="-10 4 4" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="0 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="10 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="-10 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
       </a-entity>
       
       <!-- SOFA -->
-      <a-cylinder position="10 .4 -4" scale="1 .8 1" color="#ffa85c" shadow="receive: true"></a-cylinder>
-      <a-cylinder position="-10 .4 -4" scale="1 .8 1" color="#ffa85c" shadow="receive: true"></a-cylinder>
+      <a-cylinder position="10 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
+      <a-cylinder position="0 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
+      <a-cylinder position="-10 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
 
 
       <!-- WC UTARA -->
@@ -192,13 +144,20 @@
 
 
         <!-- RUANGAN UTARA 1 -->
-        <a-box  scale="12 8 8.5" position="-12 4 -20.5" shadow="receive: true" color="#dedeed">
-          <a-box position="-.2 -.25 .5" scale=".4 .5 .02" color="#99561b">
+        <a-box  scale="15 8 8.5" position="-13 4 -20.5" shadow="receive: true" color="#dedeed">
+          <a-box position=".35 -.25 .5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position="-.25 -.25 .5" scale=".4 .5 .02" color="#99561b">
             <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
           </a-box>
         </a-box>
-        <a-box  scale="12 8 8.5" position="12 4 -20.5" shadow="receive: true" color="#dedeed">
-          <a-box position=".2 -.25 .5" scale=".4 .5 .02" color="#99561b">
+        <a-box  scale="15 8 8.5" position="13 4 -20.5" shadow="receive: true" color="#dedeed">
+          <a-box position="-.35 -.25 .5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position=".25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="0 4 -20.5" scale="11 8 8.5" color="#dedeed">
+          <a-box position=".25 -.25 .5" scale=".4 .5 .02" color="#99561b">
             <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
           </a-box>
         </a-box>
@@ -212,6 +171,11 @@
         </a-box>
         <a-box  scale="15 8 8.5" position="13 4 20.5" shadow="receive: true" color="#dedeed">
           <a-box position="-.35 -.25 -.5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="0 4 20.5" scale="11 8 8.5" color="#dedeed">
           <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
             <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
           </a-box>
