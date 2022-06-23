@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title>Vin. Site</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@v0.3-alpha/src/instanced-mesh.min.js"></script>
+<script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+</head>
+<body>
+  <script>
+
+    // function createBox(x=1, y=1, z=1){
+      
+    // }
+
+    AFRAME.registerComponent('modify-materials', {
+		  init: function () {
+			// Wait for model to load.
+			this.el.addEventListener('model-loaded', () => {
+			  // Grab the mesh / scene.
+			  const obj = this.el.getObject3D('mesh');
+			  // Go over the submeshes and modify materials we want.
+			  obj.traverse(node => {
+				if (node.name.indexOf('ship') !== -1) {
+				  node.material.color.set('red');
+				}
+			  });
+			});
+		  }
+		});
+
+  </script>
+    <a-scene id="scene" shadow="type: pcfsoft;" antialias="true" background="color: #333;" stats>
+
+      <a-assets>
+        <a-asset-item id="lift" src="../assets/lift.glb"></a-asset-item>
+        <a-asset-item id="papan" src="../assets/papan.gltf"></a-asset-item>
+        <a-asset-item id="eskalator" src="../assets/eskalator.glb"></a-asset-item>
+        <a-asset-item id="pintu" src="../assets/Glass Door/Glass Door.obj"></a-asset-item>
+        <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- LIFT -->
+      <a-entity
+        gltf-model="#lift"
+        position="-20 0 14"
+        scale="1.2 1 1">
+      </a-entity>
+      <a-entity
+        gltf-model="#lift"
+        position="-20 0 -14"
+        rotation="0 180 0"
+        scale="1.2 1 1">
+      </a-entity>
+
+      <a-entity
+        gltf-model="#lift"
+        position="20 0 14"
+        scale="1.2 1 1">
+      </a-entity>
+      <a-entity
+        gltf-model="#lift"
+        position="20 0 -14"
+        rotation="0 180 0"
+        scale="1.2 1 1">
+      </a-entity>
+
+      <!-- PAPAN -->
+      <a-entity
+        gltf-model="#papan"
+        position="10 0 -4"
+        rotation="0 90 0"
+        scale=".8 .8 .8">
+      </a-entity>
+      <a-entity
+        gltf-model="#papan"
+        position="-10 0 -4"
+        rotation="0 90 0"
+        scale=".8 .8 .8">
+      </a-entity>
+      <a-entity
+        gltf-model="#papan"
+        position="0 0 4"
+        rotation="0 -90 0"
+        scale=".8 .8 .8">
+      </a-entity>
+
+     
+      <!-- TIANG BULAT -->
+      <a-entity position="0 0 0" instanced-mesh id="tiangBulat" material="shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true">
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="0 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="10 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+          <a-entity instanced-mesh-member="mesh:#tiangBulat" position="-10 4 0" scale=".5 8 .5" geometry="primitive:cylinder" material="color:#333"></a-entity>
+      </a-entity>
+      
+      <!-- SOFA -->
+      <a-cylinder position="10 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
+      <a-cylinder position="0 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
+      <a-cylinder position="-10 .4 0" scale="1.2 .8 1.2" color="#ffa85c" shadow="receive: true"></a-cylinder>
+
+
+      <!-- WC UTARA -->
+      <a-box position="22 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
+      <a-box position="-22 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
+
+
+        
+        <!-- TANGGA SAMPING -->
+        <a-entity
+          gltf-model="url(../assets/tangga-samping.glb)"
+          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+          shadow="receive: true"
+          position="-22.5 0 20.5"
+          rotation="0 180 0"
+          scale="1 1 1.5">
+        </a-entity>
+        <a-entity
+          gltf-model="url(../assets/tangga-samping.glb)"
+          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+          shadow="receive: true"
+          position="22.5 0 20.5"
+          rotation="0 180 0"
+          scale="1 1 1.5">
+        </a-entity>
+        <a-entity
+          gltf-model="url(../assets/tangga-samping.glb)"
+          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+          shadow="receive: true"
+          position="-63 0 -20.5"
+          rotation="0 0 0"
+          scale="1 1 1.5">
+        </a-entity>
+        <a-entity
+          gltf-model="url(../assets/tangga-samping.glb)"
+          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+          shadow="receive: true"
+          position="63 0 -20.5"
+          rotation="0 0 0"
+          scale="1 1 1.5">
+        </a-entity>
+
+
+        <!-- RUANGAN UTARA 1 -->
+        <a-box  scale="15 8 8.5" position="-13 4 -20.5" shadow="receive: true" color="#dedeed">
+          <a-box position=".35 -.25 .5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position="-.25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box  scale="15 8 8.5" position="13 4 -20.5" shadow="receive: true" color="#dedeed">
+          <a-box position="-.35 -.25 .5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position=".25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="0 4 -20.5" scale="11 8 8.5" color="#dedeed">
+          <a-box position=".25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+
+        <!-- RUANGAN SELATAN 1 -->
+        <a-box  scale="15 8 8.5" position="-13 4 20.5" shadow="receive: true" color="#dedeed">
+          <a-box position=".35 -.25 -.5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position="-.25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box  scale="15 8 8.5" position="13 4 20.5" shadow="receive: true" color="#dedeed">
+          <a-box position="-.35 -.25 -.5" scale=".15 .5 .02" color="#99561b"></a-box>
+          <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="0 4 20.5" scale="11 8 8.5" color="#dedeed">
+          <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+
+        <!-- WC -->
+        <a-box position="-34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
+          <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+          <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+        </a-box>
+        <a-box position="34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
+          <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+          <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+        </a-box>
+        
+        <a-box position="-63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
+          <a-box position=".51 -.25 .25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+          <a-box position=".51 -.25 -.25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+        </a-box>
+
+        <a-box position="63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
+          <a-box position="-.51 -.25 .25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+          <a-box position="-.51 -.25 -.25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+        </a-box>
+
+        <!-- RUANGAN BARAT -->
+        <a-box position="-48 4 21" scale="20 8 7.5" shadow="receive: true" color="#dedeed" >
+          <a-box position=".35 -.25 -.5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 -.5" scale=".02 1 .5"></a-box></a-box>
+          <a-box position="-.35 -.25 -.5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 -.5" scale=".02 1 .5"></a-box></a-box>
+        </a-box>
+        <a-box position="-48 4 -21" scale="20 8 7.5" shadow="receive: true" color="#dedeed" >
+          <a-box position=".35 -.25 .5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 .5" scale=".02 1 .5"></a-box></a-box>
+          <a-box position="-.35 -.25 .5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 .5" scale=".02 1 .5"></a-box></a-box>
+        </a-box>
+
+        <a-box position="48 4 22.5" scale="20 8 5" shadow="receive: true" color="#dedeed" >
+          <a-box position=".35 -.25 -.5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 -.5" scale=".02 1 .5"></a-box></a-box>
+          <a-box position="-.35 -.25 -.5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 -.5" scale=".02 1 .5"></a-box></a-box>
+        </a-box>
+        <a-box position="48 4 -23" scale="20 8 3" shadow="receive: true" color="#dedeed" >
+          <a-box position=".35 -.25 .5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 .5" scale=".02 1 .5"></a-box></a-box>
+          <a-box position="-.35 -.25 .5" scale=".25 .5 .02" shadow="receive: true" color="#99561b"><a-box position="0 0 .5" scale=".02 1 .5"></a-box></a-box>
+        </a-box>
+
+        <a-box position="48 4 -12" scale="13 8 10" material="" geometry=""></a-box>
+        <a-box position="46 4 5" scale="20 8 10" material="" geometry="" color="#dedeed">
+          <a-box position="-.503 -.2 -.2" scale=".005 .8 .6" color="orange"></a-box>
+
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position=".41 -.3 -.5" scale=".05 .07 .1"></a-entity>
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position=".31 -.3 -.5" scale=".05 .07 .1"></a-entity>
+
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position=".05 -.3 -.5" scale=".05 .07 .1"></a-entity>
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position="-.05 -.3 -.5" scale=".05 .07 .1"></a-entity>
+
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position="-.19 -.3 -.5" scale=".05 .07 .1"></a-entity>
+          <a-entity gltf-model="url(../assets/jendela.glb)" shadow="receive: true" position="-.29 -.3 -.5" scale=".05 .07 .1"></a-entity>
+
+          <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position=".18 -.5 -.5" scale=".05 .13 .1" rotation="0 180 0"></a-entity>
+          <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position="-.42 -.5 -.5" scale=".05 .13 .1" rotation="0 180 0"></a-entity>
+        </a-box>
+        <a-box position="57.75 2 -18" material="" geometry="" scale="0.5 4 7"></a-box>
+        <a-box position="-2 0 0"></a-box>
+
+        <!-- WC UTARA -->
+        <a-box position="-32 4 -20.25" scale="12 8 10" shadow="receive: true" color="#dedeed">
+          <a-box position="-.25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".02 1 .5"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="32 4 -20.25" scale="12 8 10" shadow="receive: true" color="#dedeed">
+          <a-box position=".25 -.25 .5" scale=".4 .5 .02" color="#99561b">
+            <a-box position="0 0 .5" scale=".02 1 .5"></a-box>
+          </a-box>
+        </a-box>
+        
+
+        <!-- TEMBOK -->
+        <a-box position="0 4 -25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>
+        <a-box position="0 4 25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>       
+        <a-box position="-65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">
+          <a-box position=".8 -.25 -.065" scale=".5 .5 .1" color="#99561b">
+            <a-box position=".5 0 0" scale=".6 1 .03" color="#FFF"></a-box>
+          </a-box>
+          <a-box position=".8 -.25 .065" scale=".5 .5 .1" color="#99561b">
+            <a-box position=".5 0 0" scale=".6 1 .03" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+        <a-box position="65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">          
+          <a-box position="-.8 -.25 -.065" scale=".5 .5 .1" color="#99561b">
+            <a-box position="-.5 0 0" scale=".6 1 .03" color="#FFF"></a-box>
+          </a-box>
+          <a-box position="-.8 -.25 .065" scale=".5 .5 .1" color="#99561b">
+            <a-box position="-.5 0 0" scale=".6 1 .03" color="#FFF"></a-box>
+          </a-box>
+        </a-box>
+
+
+        <!-- LANTAI -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="130" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
+        
+        <!-- LAMPU --> 
+        <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 8 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="-42 8 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="42 8 1"></a-entity>
+        <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
+
+        
+        <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
+        <a-camera></a-camera>
+      </a-scene>
+
+
+<script></script>
+</body>
+</html>
