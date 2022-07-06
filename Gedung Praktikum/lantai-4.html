@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title>Vin. Site</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@v0.3-alpha/src/instanced-mesh.min.js"></script>
+<script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+</head>
+<body>
+  <script>
+
+    // function createBox(x=1, y=1, z=1){
+      
+    // }
+
+    AFRAME.registerComponent('tangga', {
+      init: function(){
+        let jumlah = 9;
+        let x = 0.25; 
+        for(let i = 0; i< jumlah; i++){
+        
+          let scene = document.querySelector('#scene');
+          let anakTangga = document.createElement('a-entity');
+
+          anakTangga.setAttribute('position', `0 ${x} ${-i / 2}`);
+          anakTangga.setAttribute('scale', '1 1 1');
+          anakTangga.setAttribute('shadow','receive: true');
+          anakTangga.setAttribute('instanced-mesh-member', 'mesh:#instance');
+          scene.appendChild(anakTangga);
+          x+=0.5;
+          if(i === 8){
+            anakTangga.setAttribute('scale', '1 1 1.2');
+            anakTangga.setAttribute('instanced-mesh-member', 'mesh:#instance');
+          }
+        }
+        let y = 4.25;
+        for(let j = jumlah; j> 0; j--){
+        
+          let scene = document.querySelector('#scene');
+          let anakTangga = document.createElement('a-entity');
+          anakTangga.setAttribute('instanced-mesh-member', 'mesh:#instance');
+          anakTangga.setAttribute('position', `1 ${y} ${-j / 2.25}`);
+          anakTangga.setAttribute('scale', '1 1 1');
+          anakTangga.setAttribute('shadow','receive: true');
+          scene.appendChild(anakTangga);
+          y+=0.5;
+        if(j === 9){
+          anakTangga.setAttribute('scale', '1 1 1.2');
+        }
+      }
+
+      }
+    });
+
+  </script>
+    <a-scene id="scene" shadow="type: pcfsoft;" background="color: #333;" stats>
+
+      <a-assets>
+        <a-asset-item id="lift" src="../assets/lift.glb"></a-asset-item>
+        <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
+        <a-asset-item id="pintu" src="../assets/Glass Door/Glass Door.obj"></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#lift"
+        position="0 0 0"
+        scale="1 1 1">
+      </a-entity>
+
+
+        <a-entity tangga id="tangga">
+            <a-entity position="-1.5 .25 -2.2" scale="3 .5 .5" id="instance" geometry="primitive: box" material="color:#eee" instanced-mesh></a-entity>
+        </a-entity>
+      
+        <a-box position="0 4 12.75" color="#dedeed" scale="15 8 4">
+          <a-box position="-.12 -.2 -.5" scale=".27 .2 .05" color="#28384F">
+            <a-text position="0 .2 0" scale=".4 .4 1" align="center" z-offset=".6" white-space="pre" value="Lab. Riset dan" rotation="0 180 0"></a-text>
+            <a-text position="0 0 0" scale=".4 .4 1" align="center" z-offset=".6" white-space="pre" value="Simulasi Pemodelan" rotation="0 180 0"></a-text>
+            <a-text position="0 -.2 0" scale=".4 .4 1" align="center" z-offset=".6" white-space="pre" value="Matematika" rotation="0 180 0"></a-text>
+          </a-box>
+          <a-box position=".32 .12 -.5" scale=".3 .2 .05" color="#28384F">
+            <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Smart Physics" rotation="0 180 0"></a-text>
+            <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Classroom" rotation="0 180 0"></a-text>
+          </a-box>
+
+          <a-box position=".32 -.25 -.5" scale=".3 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+          </a-box>
+          <a-box position="-.37 -.25 -.5" scale=".16 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;"> </a-box>
+        </a-box>
+
+        <!-- RUANGAN SELATAN SISI BARAT -->
+        <a-entity id="barat-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#dedeed" position="-38.5 4 10" scale="62 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
+          <a-box position=".43 -.25 -.5" scale=".08 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".45 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Strategi Bisnis" rotation="0 180 0"></a-text>
+              <a-text position="0 -.1 0" scale=".45 .5 1" align="center" z-offset=".6" white-space="pre" value="Teknologi Informasi" rotation="0 180 0"></a-text>
+            </a-box>
+          </a-box>
+          <a-box position="0.24 -.25 -.5" scale=".08 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Pengembangan" rotation="0 180 0"></a-text>
+              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Sistem Informasi" rotation="0 180 0"></a-text>
+            </a-box>
+          </a-box>
+          
+          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.02 -0.5 -0.5" scale="0.02 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
+          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".02 -0.5 -0.5" scale="0.02 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
+
+          <a-entity gltf-model="../assets/jendela.glb" position="0.09 -0.3 -0.5" scale="0.04 0.07 0.02" shadow=""></a-entity>
+          <a-entity gltf-model="../assets/jendela.glb" position="-0.09 -0.3 -0.5" scale="0.04 0.07 0.02" shadow=""></a-entity>
+          
+          <a-box position="0 .15 -.5" scale=".08 .3 .01" color="#28384F">
+            <a-text position="0 .1 0" scale=".45 .5 1" align="center" z-offset=".6" white-space="pre" value="Laboratorium" rotation="0 180 0"></a-text>
+            <a-text position="0 -.1 0" scale=".45 .5 1" align="center" z-offset=".6" white-space="pre" value="Komputasi Dasar" rotation="0 180 0"></a-text>
+          </a-box>
+
+          <a-box position="-.41 -.25 -.5" scale=".08 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Biologi" rotation=" 0 180 0"></a-text>
+            </a-box>
+          </a-box>
+        </a-entity>
+
+        <!-- RUANGAN UTARA SISI BARAT -->
+        <a-box position="-40 4 -11" scale="45 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; color: #dedeed">
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.4 -.25 .5" scale=".1 .5 .02">
+              <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Biokimia dan"></a-text>
+                <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Bioteknologi"></a-text>
+              </a-box>
+            </a-entity>
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.13 -.25 .5" scale=".1 .5 .02">
+              <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value=""></a-text>
+              </a-box>
+            </a-entity>
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".13 -.25 .5" scale=".1 .5 .02">
+              <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+              <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                <a-text position="0 .12 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Komputer"></a-text>
+                <a-text position="0 -.12 0" scale=".6 .5 1" align="center" z-offset=".6" white-space="pre" value="FAI"></a-text>
+              </a-box>
+            </a-entity>
+
+            <a-box position="0.4 -.25 .5" scale=".06 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;"></a-box>
+        </a-box>
+
+        <!-- RUANGAN SELATAN SISI TIMUR -->
+        <a-entity id="timur-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#dedeed" position="38.5 4 10" scale="62 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
+          
+          <a-box position="0.07 -.25 -.5" scale=".04 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;"></a-box>
+          <a-box position="0.23 -.25 -.5" scale=".04 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;"></a-box>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.3 -.25 -.5" scale=".08 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Komputasi" rotation="0 180 0"></a-text>
+              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Dan Desain Pabrik" rotation="0 180 0"></a-text>
+              </a-box>
+          </a-entity>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.21 -.25 -.5" scale=".08 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Uji Sensoris" rotation="0 180 0"></a-text>
+              </a-box>
+          </a-entity>
+
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="0 -.25 -.5" scale=".08 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Gizi" rotation="0 180 0"></a-text>
+            </a-box>
+          </a-entity>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".3 -.25 -.5" scale=".08 .5 .02">
+            <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab Analisis" rotation="0 180 0"></a-text>
+              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Dan Instrumentasi" rotation="0 180 0"></a-text>
+            </a-box>
+          </a-entity>
+        </a-entity>
+
+        <!-- RUANGAN UTARA SISI TIMUR -->
+        <a-box position="20 4 -12.25" material="" geometry="" scale="5 8 5" color="#dedeed">
+          <a-box position="-0 -.25 .5" scale=".6 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;"></a-box>
+        </a-box>
+        <a-box position="42.5 4 -11" scale="40 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; color: #dedeed" >
+            <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.25 -.25 .5" scale=".1 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                  <a-text position="0 .2 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab. Analisis"></a-text>
+                  <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Perancangan"></a-text>
+                  <a-text position="0 -.2 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Sistem Industri"></a-text>
+                </a-box>
+              </a-entity>
+              <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".1 -.25 .5" scale=".1 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                  <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab Perencanaan"></a-text>
+                  <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Produk"></a-text>
+                </a-box>
+              </a-entity>
+              <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".25 -.25 .5" scale=".1 .5 .02">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                  <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab Optimasi"></a-text>
+                  <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Dan Simulasi"></a-text>
+                </a-box>
+              </a-entity>              
+        </a-box>
+    
+        
+
+        <!-- TIANG -->
+        <a-box position="-10 4 -4" scale="1 8 1" color="#dedeed"></a-box>
+        <a-box position="10 4 -4" scale="1 8 1" color="#dedeed"></a-box>
+
+
+        
+        <!-- TEMBOK -->
+        <a-box position="0 4 -15" scale="140 8 .5" color="#dedeed"></a-box>
+        <a-box position="0 4 15" scale="140 8 .5" color="#dedeed"></a-box>       
+        <a-box position="-70 4 0" scale=".25 8 30" color="#dedeed"></a-box>
+        <a-box position="70 4 0" scale=".25 8 30" color="#dedeed"></a-box>
+
+        <!-- LIFT SAMPING -->
+        <a-box position="-68.25 4 -5.5" scale="3.5 8 8" color="#333">
+            <a-box position=".5 -.25 0" scale=".05 .5 .5" color="silver">
+              <a-box position=".55 0 0" scale=".1 1 .02" color="white"></a-box>
+            </a-box>
+        </a-box>
+        <a-box position="68.25 4 -5.5" scale="3.5 8 8" color="#333">
+            <a-box position="-.5 -.25 0" scale=".05 .5 .5" color="silver">
+              <a-box position="-.55 0 0" scale=".1 1 .02" color="white"></a-box>
+            </a-box>
+        </a-box>
+
+        <a-box position="0 4 -13" scale="35 8 3.25" color="#dedeed">
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".42 -.25 .5" scale=".1 .5 .02">
+            <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+          </a-entity>
+          <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.42 -.25 .5" scale=".1 .5 .02">
+            <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+          </a-entity>
+        
+        </a-box>
+
+        <!-- TANGGA SAMPING -->
+        <a-entity
+            gltf-model="url(../assets/tangga-samping.glb)"
+            material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+            shadow="receive: true"
+            position="-67 0 0"
+            rotation="0 90 0"
+            scale="1 1 1">
+        </a-entity>
+        <a-entity
+            gltf-model="url(../assets/tangga-samping.glb)"
+            material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+            shadow="receive: true"
+            position="67 0 0"
+            rotation="0 -90 0"
+            scale="1 1 1">
+        </a-entity>
+        <!-- LANTAI -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="140" height="30" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
+        
+        <!-- LAMPU --> 
+        <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 3 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="-42 3 1"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="42 3 1"></a-entity>
+        <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
+
+        
+        <a-entity camera look-controls position="0 14 -2"></a-entity>
+        <!-- <a-camera></a-camera> -->
+      </a-scene>
+
+
+<script></script>
+</body>
+</html>
