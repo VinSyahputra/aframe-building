@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title>Vin. Site</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@v0.3-alpha/src/instanced-mesh.min.js"></script>
+<script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+</head>
+<body>
+
+    <a-scene id="scene" shadow="type: pcfsoft;" background="color: #333;" stats>
+
+        <a-sky src=" ../sky.jpg" rotation="0 0 0"></a-sky>
+
+        <a-box position="0 1 -20" scale="120 2 .5" color="#dedeed"></a-box>
+        <a-box position="0 1 20" scale="120 2 .5" color="#dedeed"></a-box>       
+        <a-box position="-60 1 0" scale=".25 2 40" color="#dedeed"></a-box>
+        <a-box position="60 1 0" scale=".25 2 40" color="#dedeed"></a-box>
+
+        <!-- LANTAI -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="120" height="40" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../semen.jpg; repeat: 80 40 "></a-plane>
+        
+        <!-- LAMPU --> 
+        <a-entity light="type: ambient; color: #fff; intensity: .75"></a-entity>
+
+        
+        <a-camera></a-camera>
+        <!-- <a-camera></a-camera> -->
+      </a-scene>
+
+
+<script></script>
+</body>
+</html>

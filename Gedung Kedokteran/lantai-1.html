@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="">
+<title>Vin. Site</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@v0.3-alpha/src/instanced-mesh.min.js"></script>
+<script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+</head>
+<body>
+
+    <a-scene id="scene" shadow="type: pcfsoft;" background="color: #333;" stats>
+        <a-assets>
+            <a-asset-item id="lift" src="../assets/lift.glb"></a-asset-item>
+            <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
+            <a-asset-item id="pintu" src="../assets/Glass Door/Glass Door.obj"></a-asset-item>
+        </a-assets>
+        
+        <a-entity
+            gltf-model="#lift"
+            position="0 0 -20"
+            rotation="0 180 0"
+            scale="1.2 1 1">
+        </a-entity>
+
+        <a-entity
+            gltf-model="url(../assets/tangga-samping.glb)"
+            material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+            shadow="receive: true"
+            position="9.5 0 -21.5"
+            scale="1 1 1">
+        </a-entity>
+
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="-8 -0.2 24.5" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+    
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="-4.8 -0.2 24.5" rotation="0 180 0" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="4.8 -0.2 24.5" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+    
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="8 -0.2 24.5" rotation="0 180 0" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="35.25 -0.2 18.2" rotation="0 90 0" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+    
+        <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="35.25 -0.2 15" rotation="0 -90 0" scale="0.2 0.3 0.1" shadow="receive: true" material="color: #fff">
+            <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+        </a-entity>
+
+
+        <!-- SELATAN -->
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="6.5 8 0.5" position="0 4 24.5"></a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="31.25 8 0.5" position="25.25 4 24.5"></a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="31.25 8 0.5" position="-25.25 4 24.5"></a-box>
+
+        <a-box material="color: #eaf1dc" geometry="" position="6.45 7.55 24.5" scale="6.5 0.9 0.5"></a-box>
+        <a-box material="color: #eaf1dc" geometry="" position="-6.45 7.55 24.5" scale="6.5 0.9 0.5"></a-box>
+
+        <!-- BARAT -->
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="14 8 50" position="-58 4 0" rotation="">
+            <a-entity gltf-model="../assets/jendela.glb" position=".5 -0.3 -.14" scale="0.02 0.07 0.1" rotation="0 90 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela.glb" position=".5 -0.3 -.1" scale="0.02 0.07 0.1" rotation="0 90 0"></a-entity>
+          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".505 -0.5 -0.26" scale="0.03 0.13 0.1" shadow="receive: true" rotation="0 90 0"></a-entity>
+          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".505 -0.5 -0.20" scale="0.03 0.13 0.1" shadow="receive: true" rotation="0 90 0"></a-entity>
+        </a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="30 8 5" position="-25 4 -13">
+            <a-box position="-.33 -.25 .51" scale=".09 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.4 0 .5" scale=".02 .05 1"></a-box>
+            </a-box>
+            <a-box position="-.13 -.25 .51" scale=".09 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.4 0 .5" scale=".02 .05 1"></a-box>
+            </a-box>
+            <a-box position=".11 -.25 .51" scale=".09 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.4 0 .5" scale=".02 .05 1"></a-box>
+            </a-box>
+            <a-box position=".32 -.25 .51" scale=".09 .5 .02" color="#525151" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.4 0 .5" scale=".02 .05 1"></a-box>
+            </a-box>
+        </a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="24 8 26" position="-39 4 12.05587">
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.40 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.32 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position="-.24 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position="-.16 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position="-.08 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position="0 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position=".08 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+            <a-entity gltf-model="../assets/jendela-kaca.glb" position=".16 -0.5 -.5" scale="0.04 0.13 0.05" shadow="receive: true" rotation="0 180 0"></a-entity>
+        </a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="50 8 9.5" position="-26 4 -20.25">
+            <a-box position="-.33 -.25 .5" scale=".09 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                    <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang Rapat PRODI"></a-text>
+                </a-box>
+            </a-box>
+        </a-box>
+
+
+        <!-- TIMUR -->
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="30 8 24" position="50 4 -13" rotation="" geometry="">
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.502 -0.5 0.25" scale="0.04 0.13 0.03" shadow="receive: true" rotation="0 -90 0"></a-entity>
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.502 -0.5 0.17" scale="0.04 0.13 0.03" shadow="receive: true" rotation="0 -90 0"></a-entity>
+            <a-box position="-.502 .1 0.21" scale="0.005 .18 .16">
+                <a-text position="0 .1 0" scale=".4 .4 1" align="center" z-offset=".6" white-space="pre"  value="Ruang Tata Usaha" rotation="0 -90 0" color="#333"></a-text>
+                <a-text position="0 -.1 0" scale=".4 .4 1" align="center" z-offset=".6" white-space="pre"  value="Fakultas Kedokteran" rotation="0 -90 0" color="#333"></a-text>
+            </a-box>
+        </a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="24 8 26" position="53 4 12" rotation="" geometry=""></a-box>
+        <a-box material="color: #eaf1dc;" geometry="" position="35.25 1.5 4" scale="0.5 3 10">
+            <a-box scale="1.2 1 .4" color="#99561b"></a-box>
+        </a-box>
+        <a-box material="color: #eaf1dc;" geometry="" position="38 7.5 4" scale="6 1 10"></a-box>
+        <a-box material="color: #eaf1dc;" geometry="" position="38 4 8.7394" scale="6 8 0.5"></a-box>
+
+        <a-box material="color: #eaf1dc" geometry="" position="35.25 4 22" scale="0.5 8 4.5"></a-box>
+        <a-box material="color: #eaf1dc" geometry="" position="35.25 4 11.25" scale="0.5 8 4.5"></a-box>
+        <a-box material="color: #eaf1dc" geometry="" position="35.25 7.53727 19" scale="0.5 0.9 11"></a-box>
+
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="24 8 14" position="23 4 -18" geometry="">
+            <a-box position="-.502 -.25 .32" scale=".005 .5 .2" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.5 0 -.4" scale="1 .05 .02"></a-box>
+            </a-box>
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position=".32 -0.5 .5" scale="0.04 0.13 0.05" shadow="receive: true"></a-entity>
+            <a-entity gltf-model="../assets/pintu-kaca.glb" position=".24 -0.5 .5" scale="0.04 0.13 0.05" shadow="receive: true"></a-entity>
+            <a-box position="-.3 -.2 .5" scale=".1 .4 .01" color="#b01111"></a-box>
+        </a-box>
+
+
+        <!-- UTARA -->
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" position="9.5 4 -24.75" scale="3 8 0.5"></a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" position="2.25 4 -21.5" scale="0.5 8 7"></a-box>
+        <a-box material="color: #eaf1dc; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" position="5 4 -24.75" scale="12 8 0.5">
+            <a-box position="0 -.25 .51" scale=".25 .5 .2" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
+                <a-box position="-.4 0 .5" scale=".02 .05 1"></a-box>
+            </a-box>
+        </a-box>
+        <a-box></a-box>
+
+        <!-- TIANG -->
+        <a-cylinder material="color: #333; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="1 8 1" position="0 4 0"></a-cylinder>
+        <a-cylinder material="color: #333; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="1 8 1" position="12 4 0"></a-cylinder>
+        <a-cylinder material="color: #333; shader:phong; reflectivity: 0.9; shininess: 30;" shadow="receive: true" scale="1 8 1" position="-12 4 0"></a-cylinder>
+
+        <!-- LANTAI -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="130" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
+        
+        <!-- LAMPU --> 
+        <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 6 3"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="-42 3 -6"></a-entity>
+        <a-entity light="type: point; intensity: 0.45; distance: 10; decay: 2; castShadow:true;" position="42 3 -6"></a-entity>
+        <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
+
+        
+        <a-camera></a-camera>
+        <!-- <a-camera></a-camera> -->
+      </a-scene>
+
+
+<script></script>
+</body>
+</html>
