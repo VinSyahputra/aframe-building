@@ -58,6 +58,22 @@
         <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
       </a-assets>
 
+      <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="-1.6 -0.1 14.7" scale="0.2 0.2 0.1" shadow="" material="color: #fff">
+        <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+      </a-entity>
+
+      <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="1.6 -0.1 14.7" rotation="0 180 0" scale="0.2 0.2 0.1" shadow="" material="color: #fff">
+        <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+      </a-entity>
+
+      <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="-1.6 -0.1 -14.7" scale="0.2 0.2 0.1" shadow="" material="color: #fff">
+        <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+      </a-entity>
+
+      <a-entity obj-model="obj: ../assets/Glass Door/Glass Door.obj; mtl: ../assets/Glass Door/Glass Door.mtl" position="1.6 -0.1 -14.7" rotation="0 180 0" scale="0.2 0.2 0.1" shadow="" material="color: #fff">
+        <a-box position="0 12.5 0" scale="16 23.5 0.5" color="#aaa" material="" geometry=""></a-box>
+      </a-entity>
+
       <a-entity
         gltf-model="#lift"
         position="0 0 0"
@@ -73,19 +89,20 @@
         <a-entity id="barat-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="-25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
           <a-box position=".40 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".5 .5 1" rotation="0 180 0" align="center" z-offset=".6" white-space="pre" value="Laboratorium"></a-text>
+              <a-text position="0 -.1 0" scale=".5 .5 1" rotation="0 180 0" align="center" z-offset=".6" white-space="pre" value="Nanoteknologi"></a-text>
             </a-box>
           </a-box>
           <a-box position="0 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
               <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
             </a-box>
           </a-box>
           <a-box position="-.40 -.25 -.5" scale=".12 .5 .02" color="#99561b" material="shader:phong; reflectivity: 0.9; shininess: 30;">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
               <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
             </a-box>
           </a-box>
@@ -95,14 +112,15 @@
         <a-box position="-30 4 -11" scale="25 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; color: #ccc">
             <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 .5" scale=".18 .5 .02">
               <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
-              <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-                <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
+              <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist Lab"></a-text>
+                <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Of Physhics"></a-text>
               </a-box>
             </a-entity>
 
             <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".35 -.25 .5" scale=".18 .5 .02">
               <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
-              <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
+              <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
                 <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
               </a-box>
             </a-entity>
@@ -112,21 +130,16 @@
         <a-entity id="timur-selatan" geometry="primitive:box;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#ccc" position="25 4 10" scale="35 8 10"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30;" geometry-merger="preserveOriginal: false">
           <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.40 -.25 -.5" scale=".12 .5 .02">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
+            <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+              <a-text position="0 .1 0" scale=".5 .5 1" align="center" rotation="0 180 0" z-offset=".6" white-space="pre" value="Laboratorium"></a-text>
+              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" rotation="0 180 0" z-offset=".6" white-space="pre" value="Sistem Informasi"></a-text>
             </a-box>
           </a-entity>
           <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="0 -.25 -.5" scale=".12 .5 .02">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
-            </a-box>
           </a-entity>
           <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".40 -.25 -.5" scale=".12 .5 .02">
             <a-box position="0 0 -.25" scale="0.025 1 1"></a-box>
-            <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-              <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
-            </a-box>
           </a-entity>
         </a-entity>
 
@@ -134,14 +147,14 @@
         <a-box position="30 4 -11" scale="25 8 8"  shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; color: #ccc" >
             <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="-.35 -.25 .5" scale=".18 .5 .02">
                 <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
-                <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-                  <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                  <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab Robotika"></a-text>
                 </a-box>
               </a-entity>
               <a-entity geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position=".35 -.25 .5" scale=".18 .5 .02">
                 <a-box position="0 0 .25" scale="0.025 1 1"></a-box>
-                <a-box position="0 .75 .25" scale="1 .35 1" color="blue">
-                  <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Alchemist"></a-text>
+                <a-box position="0 .75 .25" scale="1 .35 1" color="#28384F">
+                  <a-text position="0 0 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Lab Erogonomi"></a-text>
                 </a-box>
               </a-entity>
         </a-box>
@@ -154,13 +167,9 @@
 
         
         <!-- tembok -->
-        <a-box position="0 4 -15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
-            <a-box position="0 -.25 .5" scale=".08 .5 .2" color="#fff"></a-box>
-        </a-box>
+        <a-box position="0 4 -15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false"></a-box>
 
-        <a-box position="0 4 15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false">
-          <a-box position="0 -.25 -.5" scale=".08 .5 .2" color="#fff"></a-box>
-        </a-box>
+        <a-box position="0 4 15" scale="100 8 .5" color="#ccc" geometry-merger="preserveOriginal: false"></a-box>
         
         <a-box position="-50 4 0" scale=".25 8 30" color="#ccc"></a-box>
         <a-box position="50 4 0" scale=".25 8 30" color="#ccc"></a-box>
@@ -207,8 +216,8 @@
         <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
 
         
-        <a-entity camera look-controls position="0 14 -2"></a-entity>
-        <!-- <a-camera></a-camera> -->
+        <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
+        <a-camera></a-camera>
       </a-scene>
 
 
