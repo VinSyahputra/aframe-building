@@ -13,6 +13,18 @@
 
     <a-scene id="scene" shadow="type: pcfsoft;" background="color: #333;" stats>
 
+        <a-entity position="0 1 0">
+            <a-box position="0 0 0" scale=".5 1.2 .2"></a-box>
+            <a-box position="0 0 0" scale="1.2 .5 .2"></a-box>
+            <a-text position="0 -1 .2" align="center" side="double" scale="1 1 1" value="KEDOKTERAN"></a-text>
+        </a-entity>
+
+        <a-box position="0 2 -10" color="red">
+            <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".51" white-space="pre" value="RUANG" rotation="0 0 0"></a-text>
+              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".51" white-space="pre" value="SERBAGUNA" rotation="0 0 0"></a-text>
+        </a-box>
+        <a-entity geometry="primitive: octahedron" material="color: green" scale=".6 1 .6" position="0 1 0" animation="property: position; to: 0 2 0; dur: 500; easing: easeInOutQuad; loop: true"></a-entity>
+
         <!-- <a-entity id="pintu" geometry="primitive: box; buffer: false;" material="shader:phong; reflectivity: 0.9; shininess: 30; color:#99561b" position="0 2 0" scale="4 4 .05">
             <a-box position="0 0 -.25" scale="0.015 1 1"></a-box>
         </a-entity> -->
