@@ -8,6 +8,8 @@
 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@v0.3-alpha/src/instanced-mesh.min.js"></script>
 <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+
+<script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.14/dist/aframe-orbit-controls-component.min.js"></script>
 </head>
 <body>
   <script>
@@ -41,6 +43,18 @@
         <a-asset-item id="pintu" src="../assets/Glass Door/Glass Door.obj"></a-asset-item>
         <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
       </a-assets>
+
+      <a-entity id="camera" camera position="0 25 25" orbit-controls="
+            target: #target;
+            enablePan: false;
+            enableDamping: true;
+            dampingFactor: 0.125;
+            rotateSpeed:0.25;
+            rotateToSpeed: 0.04;
+            rotateTo: 0.172 4.140 2.797;
+            logPosition: true;
+            ">
+        </a-entity>
 
       <a-entity shadow="receive: true" geometry="primitive: octahedron" material="color: green" scale=".6 1 .6" position="0 2 0" animation="property: position; from:0 2 0; to: 0 2.5 0; dur: 500; easing: linear; loop: true" animation__2="property: rotation; from:0 0 0; to: 0 360 0; dur: 1500; easing: linear; loop: true"></a-entity>
       
@@ -292,7 +306,7 @@
 
 
         <!-- LANTAI -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="120" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
+        <a-plane id="target" position="0 0 0" rotation="-90 0 0" width="120" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
         
         <!-- LAMPU --> 
         <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 8 1"></a-entity>
@@ -301,8 +315,9 @@
         <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
 
         
-        <a-entity camera look-controls position="0 14 -2"></a-entity>
-        <!-- <a-camera wasd-controls-enabled="false" position="0 25 5"></a-camera> -->
+        <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
+        <!-- <a-camera wasd-controls-enabled="false" position="0 25 -25" look-controls="magicWindowTrackingEnabled: true"></a-camera> -->
+        
       </a-scene>
 
 

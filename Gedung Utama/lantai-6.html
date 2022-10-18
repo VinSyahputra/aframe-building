@@ -43,302 +43,304 @@
         <a-asset-item id="tanggaSamping" src="../assets/tangga-samping.glb"></a-asset-item>
       </a-assets>
 
-      <a-entity shadow="receive: true" geometry="primitive: octahedron" material="color: green" scale=".6 1 .6" position="0 2 0" animation="property: position; from:0 2 0; to: 0 2.5 0; dur: 500; easing: linear; loop: true" animation__2="property: rotation; from:0 0 0; to: 0 360 0; dur: 1500; easing: linear; loop: true"></a-entity>
+<a-entity>
+  <a-entity shadow="receive: true" geometry="primitive: octahedron" material="color: green" scale=".6 1 .6" position="0 2 0" animation="property: position; from:0 2 0; to: 0 2.5 0; dur: 500; easing: linear; loop: true" animation__2="property: rotation; from:0 0 0; to: 0 360 0; dur: 1500; easing: linear; loop: true"></a-entity>
 
-      <!-- LIFT -->
-      <a-entity
-        gltf-model="#lift"
-        position="-20 0 14"
-        scale="1.2 1 1">
+  <!-- LIFT -->
+  <a-entity
+    gltf-model="#lift"
+    position="-20 0 14"
+    scale="1.2 1 1">
+  </a-entity>
+  <a-entity
+    gltf-model="#lift"
+    position="-20 0 -14"
+    rotation="0 180 0"
+    scale="1.2 1 1">
+  </a-entity>
+
+  <a-entity
+    gltf-model="#lift"
+    position="20 0 14"
+    scale="1.2 1 1">
+  </a-entity>
+  <a-entity
+    gltf-model="#lift"
+    position="20 0 -14"
+    rotation="0 180 0"
+    scale="1.2 1 1">
+  </a-entity>
+
+
+  <!-- WC UTARA -->
+  <a-box position="-24 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
+  <a-box position="24 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
+
+
+    
+    <!-- TANGGA SAMPING -->
+    <a-entity
+      gltf-model="url(../assets/tangga-samping.glb)"
+      material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+      shadow="receive: true"
+      position="-22.5 0 20.5"
+      rotation="0 180 0"
+      scale="1 1 1.5">
+    </a-entity>
+    <a-entity
+      gltf-model="url(../assets/tangga-samping.glb)"
+      material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+      shadow="receive: true"
+      position="22.5 0 20.5"
+      rotation="0 180 0"
+      scale="1 1 1.5">
+    </a-entity>
+    <a-entity
+      gltf-model="url(../assets/tangga-samping.glb)"
+      material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+      shadow="receive: true"
+      position="-63 0 -20.5"
+      rotation="0 0 0"
+      scale="1 1 1.5">
+    </a-entity>
+    <a-entity
+      gltf-model="url(../assets/tangga-samping.glb)"
+      material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
+      shadow="receive: true"
+      position="63 0 -20.5"
+      rotation="0 0 0"
+      scale="1 1 1.5">
+    </a-entity>
+
+    <!-- RUANG DOSEN FTI -->
+    <a-box position="0 4 -9.25" scale="32.75 8 31" color="#dedeed" shadow="receive: true">
+      <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position="-.45 -.5 .5" scale=".04 .13 .02">
+        <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Kimia"></a-text>
+        </a-box>
       </a-entity>
-      <a-entity
-        gltf-model="#lift"
-        position="-20 0 -14"
-        rotation="0 180 0"
-        scale="1.2 1 1">
+      <a-box position="-.33 -.15 .5" scale=".15 .7 .01" shadow="receive: true">
+        <a-box position="-0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
+        <a-box position="0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
+      </a-box>
+
+      <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position="0 -.5 .5" scale=".04 .13 .02">
+        <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Informatika"></a-text>
+        </a-box>
       </a-entity>
 
-      <a-entity
-        gltf-model="#lift"
-        position="20 0 14"
-        scale="1.2 1 1">
+      <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position=".45 -.5 .5" scale=".04 .13 .02">
+        <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Pangan"></a-text>
+        </a-box>
       </a-entity>
-      <a-entity
-        gltf-model="#lift"
-        position="20 0 -14"
-        rotation="0 180 0"
-        scale="1.2 1 1">
+      <a-box position=".33 -.15 .5" scale=".15 .7 .01">
+        <a-box position="-0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
+        <a-box position="0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
+      </a-box>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.09999 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.19886 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.09999 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.19886 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+    </a-box>
+
+    <!-- RUANGAN SELATAN 1 -->
+    <a-box  scale="15 8 8.5" position="-13 4 20.5" shadow="receive: true" color="#dedeed">
+      <a-box position=".35 -.25 -.5" scale=".15 .5 .02" color="#99561b">
+        <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
+          <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
+          <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.75" rotation="0 180 0"></a-text>
+        </a-box>
+      </a-box>
+      <a-box position="-.25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+        <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+        <a-box position="0 .9 -.5" scale=".8 .5 .05" color="#28384F">
+          <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Magister" rotation="0 180 0"></a-text>
+          <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Teknik Kimia" rotation="0 180 0"></a-text>
+        </a-box>
+      </a-box>
+    </a-box>
+    <a-box  scale="15 8 8.5" position="13 4 20.5" shadow="receive: true" color="#dedeed">
+      <a-box position="-.35 -.25 -.5" scale=".15 .5 .02" color="#99561b">
+        <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
+          <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
+          <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.74" rotation="0 180 0"></a-text>
+        </a-box>
+      </a-box>
+      <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+        <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+        <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
+          <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
+          <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.73" rotation="0 180 0"></a-text>
+        </a-box>
+      </a-box>
+    </a-box>
+    <a-box position="0 4 20.5" scale="11 8 8.5" color="#dedeed">
+      <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
+        <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
+        <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
+          <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
+          <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Sidang" rotation="0 180 0"></a-text>
+        </a-box>
+      </a-box>
+    </a-box>
+
+    <!-- WC -->
+    <a-box position="-34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
+      <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+      <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+    </a-box>
+    <a-box position="34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
+      <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+      <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
+    </a-box>
+    
+    <a-box position="-63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
+      <a-box position=".51 -.25 .25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+      <a-box position=".51 -.25 -.25" scale=".02 .5 .3" shadow="receive: true"></a-box>
+    </a-box>
+
+    <a-box position="63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
+      <a-box position="-.51 -.25 .25" scale=".015 .5 .3" shadow="receive: true"></a-box>
+      <a-box position="-.51 -.25 -.25" scale=".015 .5 .3" shadow="receive: true"></a-box>
+    </a-box>
+
+    <!-- TEKNIK INDUSTRI -->
+    <a-box position="-48 4 18.75" scale="20 8 12" shadow="receive: true" color="#dedeed" >
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0">
+        <a-box position="-1 5 .08" scale="4 1.5 .1" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Ruang Dekan"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="dan Wakil Dekan"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-box position="0.315 0 -0.5038" scale="0.38 1 0.005" color="blue" material="" geometry=""></a-box>
+      <a-box position="0.503 0 -0.2" scale="0.61 1 0.005" color="blue" material="" geometry="" rotation="0 90 0"></a-box>
+    </a-box>
+
+    <a-box position="-43 4 -15.5" scale="30 8 19" shadow="receive: true" color="#dedeed" >
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 0.5" scale="0.05 0.13 0.02" shadow="receive: true">
+        <a-box position="1 5 .08" scale="4 1.5 .1" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Industri"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 0.5" scale="0.05 0.13 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.4088 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.28959 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.16865 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+    </a-box>
+
+    <!-- FAKULTAS AGAMA ISLAM -->
+    <a-box position="48 4 18.75" scale="20 8 12" shadow="receive: true" color="#dedeed" >
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0">
+        <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. DEKANAT"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="FAI"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
+    </a-box>
+    <a-box position="43 4 -9.25" scale="30 8 31" shadow="receive: true" color="#dedeed" >
+      
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.04 -0.5 0.5" scale="0.04 0.13 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position=".04 -0.5 0.5" scale="0.04 0.13 0.02" shadow="receive: true"></a-entity>
+      <!-- JENDELA -->
+      <a-entity gltf-model="../assets/jendela.glb" position="-.44 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-.36 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-.28 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.2 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.2 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position=".44 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position=".36 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position=".28 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
+
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.5 -0.5 -.01" scale="0.03 0.13 .02" shadow="" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.5 -0.5 0.05" scale="0.03 0.13 .02" shadow="" rotation="0 90 0">
+        <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. DOSEN"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="FAI"></a-text>
+        </a-box>
+      </a-entity>
+    </a-box>
+
+    
+
+    <!-- TEMBOK -->
+    <a-box position="0 4 -25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>
+    <a-box position="0 4 25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>       
+    <a-box position="-65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.26978" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.18918" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.10904" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.26978" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.18918" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.10904" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.52 -0.5 -0.024794" scale="0.025 0.13 2" shadow="" rotation="0 90 0">
+        <a-box position="-1 5 .2" scale=".2 1.5 4" rotation="0 -90 0" color="#28384F">
+          <a-text position="0 .2 0" scale=".6 .8 1" align="center" z-offset=".6" white-space="pre" rotation="0 90 0" value="Teknik"></a-text>
+          <a-text position="0 -.2 0" scale=".6 .8 1" align="center" z-offset=".6" white-space="pre" rotation="0 90 0" value="Elektro"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.52 -0.5 0.02494" scale="0.025 0.13 2" shadow="" rotation="0 90 0"></a-entity>
+    </a-box>
+    <a-box position="65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">          
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.1" scale="0.025 0.13 2" shadow="" rotation="0 -90 0">
+        <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. KAPRODI"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="TH/BSA"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.15039" scale="0.025 0.13 2" shadow="" rotation="0 -90 0"></a-entity>
+
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.04146" scale="0.025 0.13 2" shadow="" rotation="0 -90 0"></a-entity>
+      <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 -0.00896" scale="0.025 0.13 2" shadow="" rotation="0 -90 0">
+        <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
+          <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. KAPRODI"></a-text>
+          <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="PAI/PBS"></a-text>
+        </a-box>
       </a-entity>
 
-
-      <!-- WC UTARA -->
-      <a-box position="-24 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
-      <a-box position="24 4 -22.5" scale="8 8 4.5" color="#dedeed" shadow="receive: true"></a-box>
-
-
-        
-        <!-- TANGGA SAMPING -->
-        <a-entity
-          gltf-model="url(../assets/tangga-samping.glb)"
-          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
-          shadow="receive: true"
-          position="-22.5 0 20.5"
-          rotation="0 180 0"
-          scale="1 1 1.5">
-        </a-entity>
-        <a-entity
-          gltf-model="url(../assets/tangga-samping.glb)"
-          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
-          shadow="receive: true"
-          position="22.5 0 20.5"
-          rotation="0 180 0"
-          scale="1 1 1.5">
-        </a-entity>
-        <a-entity
-          gltf-model="url(../assets/tangga-samping.glb)"
-          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
-          shadow="receive: true"
-          position="-63 0 -20.5"
-          rotation="0 0 0"
-          scale="1 1 1.5">
-        </a-entity>
-        <a-entity
-          gltf-model="url(../assets/tangga-samping.glb)"
-          material="shader:phong; reflectivity: 0.9; shininess: 30; color: #fff"
-          shadow="receive: true"
-          position="63 0 -20.5"
-          rotation="0 0 0"
-          scale="1 1 1.5">
-        </a-entity>
-
-        <!-- RUANG DOSEN FTI -->
-        <a-box position="0 4 -9.25" scale="32.75 8 31" color="#dedeed" shadow="receive: true">
-          <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position="-.45 -.5 .5" scale=".04 .13 .02">
-            <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Kimia"></a-text>
-            </a-box>
-          </a-entity>
-          <a-box position="-.33 -.15 .5" scale=".15 .7 .01" shadow="receive: true">
-            <a-box position="-0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
-            <a-box position="0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
-          </a-box>
-
-          <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position="0 -.5 .5" scale=".04 .13 .02">
-            <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Informatika"></a-text>
-            </a-box>
-          </a-entity>
-
-          <a-entity gltf-model="url(../assets/pintu-kaca.glb)" shadow="receive: true" position=".45 -.5 .5" scale=".04 .13 .02">
-            <a-box position="0 4.5 .08" scale="2 1.2 .1" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Pangan"></a-text>
-            </a-box>
-          </a-entity>
-          <a-box position=".33 -.15 .5" scale=".15 .7 .01">
-            <a-box position="-0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
-            <a-box position="0.4 0 0.75" scale="0.2 1 0.5" color="orange" shadow="receive: true"></a-box>
-          </a-box>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.09999 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.19886 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.09999 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.19886 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-        </a-box>
-
-        <!-- RUANGAN SELATAN 1 -->
-        <a-box  scale="15 8 8.5" position="-13 4 20.5" shadow="receive: true" color="#dedeed">
-          <a-box position=".35 -.25 -.5" scale=".15 .5 .02" color="#99561b">
-            <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
-              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
-              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.75" rotation="0 180 0"></a-text>
-            </a-box>
-          </a-box>
-          <a-box position="-.25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
-            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
-            <a-box position="0 .9 -.5" scale=".8 .5 .05" color="#28384F">
-              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Magister" rotation="0 180 0"></a-text>
-              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Teknik Kimia" rotation="0 180 0"></a-text>
-            </a-box>
-          </a-box>
-        </a-box>
-        <a-box  scale="15 8 8.5" position="13 4 20.5" shadow="receive: true" color="#dedeed">
-          <a-box position="-.35 -.25 -.5" scale=".15 .5 .02" color="#99561b">
-            <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
-              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
-              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.74" rotation="0 180 0"></a-text>
-            </a-box>
-          </a-box>
-          <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
-            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
-            <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
-              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
-              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="4.1.6.73" rotation="0 180 0"></a-text>
-            </a-box>
-          </a-box>
-        </a-box>
-        <a-box position="0 4 20.5" scale="11 8 8.5" color="#dedeed">
-          <a-box position=".25 -.25 -.5" scale=".4 .5 .02" color="#99561b">
-            <a-box position="0 0 -.5" scale=".03 1 .5" color="#FFF"></a-box>
-            <a-box position="0 .9 -.5" scale="1 .5 .05" color="#28384F">
-              <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Ruang" rotation="0 180 0"></a-text>
-              <a-text position="0 -.1 0" scale=".5 .5 1" align="center" z-offset=".6" white-space="pre" value="Sidang" rotation="0 180 0"></a-text>
-            </a-box>
-          </a-box>
-        </a-box>
-
-        <!-- WC -->
-        <a-box position="-34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
-          <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
-          <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
-        </a-box>
-        <a-box position="34 4 22.5" scale="9 8 5" shadow="receive: true" color="#dedeed">
-          <a-box position=".25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
-          <a-box position="-.25 -.25 -.5" scale=".3 .5 .02" shadow="receive: true"></a-box>
-        </a-box>
-        
-        <a-box position="-63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
-          <a-box position=".51 -.25 .25" scale=".02 .5 .3" shadow="receive: true"></a-box>
-          <a-box position=".51 -.25 -.25" scale=".02 .5 .3" shadow="receive: true"></a-box>
-        </a-box>
-
-        <a-box position="63 4 20.5" scale="4 8 9" color="#dedeed" shadow="receive: true">
-          <a-box position="-.51 -.25 .25" scale=".015 .5 .3" shadow="receive: true"></a-box>
-          <a-box position="-.51 -.25 -.25" scale=".015 .5 .3" shadow="receive: true"></a-box>
-        </a-box>
-
-        <!-- TEKNIK INDUSTRI -->
-        <a-box position="-48 4 18.75" scale="20 8 12" shadow="receive: true" color="#dedeed" >
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0">
-            <a-box position="-1 5 .08" scale="4 1.5 .1" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Ruang Dekan"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="dan Wakil Dekan"></a-text>
-            </a-box>
-          </a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-box position="0.315 0 -0.5038" scale="0.38 1 0.005" color="blue" material="" geometry=""></a-box>
-          <a-box position="0.503 0 -0.2" scale="0.61 1 0.005" color="blue" material="" geometry="" rotation="0 90 0"></a-box>
-        </a-box>
-
-        <a-box position="-43 4 -15.5" scale="30 8 19" shadow="receive: true" color="#dedeed" >
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 0.5" scale="0.05 0.13 0.02" shadow="receive: true">
-            <a-box position="1 5 .08" scale="4 1.5 .1" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Teknik"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" value="Industri"></a-text>
-            </a-box>
-          </a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 0.5" scale="0.05 0.13 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.4088 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.28959 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.16865 -0.3 0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-        </a-box>
-
-        <!-- FAKULTAS AGAMA ISLAM -->
-        <a-box position="48 4 18.75" scale="20 8 12" shadow="receive: true" color="#dedeed" >
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0"></a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".05 -0.5 -0.5" scale="0.05 0.13 0.02" shadow="receive: true" rotation="0 180 0">
-            <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. DEKANAT"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="FAI"></a-text>
-            </a-box>
-          </a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.4088 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.28959 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.16865 -0.3 -0.5" scale="0.06 0.07 0.02" shadow=""></a-entity>
-        </a-box>
-        <a-box position="43 4 -9.25" scale="30 8 31" shadow="receive: true" color="#dedeed" >
-          
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-.04 -0.5 0.5" scale="0.04 0.13 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position=".04 -0.5 0.5" scale="0.04 0.13 0.02" shadow="receive: true"></a-entity>
-          <!-- JENDELA -->
-          <a-entity gltf-model="../assets/jendela.glb" position="-.44 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-.36 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-.28 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.2 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.2 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position=".44 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position=".36 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position=".28 -0.3 0.5" scale="0.04 0.07 0.02" shadow="receive: true"></a-entity>
-
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.5 -0.5 -.01" scale="0.03 0.13 .02" shadow="" rotation="0 90 0"></a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.5 -0.5 0.05" scale="0.03 0.13 .02" shadow="" rotation="0 90 0">
-            <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. DOSEN"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="FAI"></a-text>
-            </a-box>
-          </a-entity>
-        </a-box>
-
-        
-
-        <!-- TEMBOK -->
-        <a-box position="0 4 -25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>
-        <a-box position="0 4 25" scale="130 8 .5" color="#dedeed" shadow="receive: true"></a-box>       
-        <a-box position="-65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.26978" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.18918" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 0.10904" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.26978" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.18918" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="0.52 -0.3 -0.10904" scale="0.04 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.52 -0.5 -0.024794" scale="0.025 0.13 2" shadow="" rotation="0 90 0">
-            <a-box position="-1 5 .2" scale=".2 1.5 4" rotation="0 -90 0" color="#28384F">
-              <a-text position="0 .2 0" scale=".6 .8 1" align="center" z-offset=".6" white-space="pre" rotation="0 90 0" value="Teknik"></a-text>
-              <a-text position="0 -.2 0" scale=".6 .8 1" align="center" z-offset=".6" white-space="pre" rotation="0 90 0" value="Elektro"></a-text>
-            </a-box>
-          </a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="0.52 -0.5 0.02494" scale="0.025 0.13 2" shadow="" rotation="0 90 0"></a-entity>
-        </a-box>
-        <a-box position="65 4 0" scale=".25 8 50" color="#dedeed" shadow="receive: true">          
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.1" scale="0.025 0.13 2" shadow="" rotation="0 -90 0">
-            <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. KAPRODI"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="TH/BSA"></a-text>
-            </a-box>
-          </a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.15039" scale="0.025 0.13 2" shadow="" rotation="0 -90 0"></a-entity>
-
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 0.04146" scale="0.025 0.13 2" shadow="" rotation="0 -90 0"></a-entity>
-          <a-entity gltf-model="../assets/pintu-kaca.glb" position="-0.52 -0.5 -0.00896" scale="0.025 0.13 2" shadow="" rotation="0 -90 0">
-            <a-box position="1 5 .2" scale=".2 1.5 4" rotation="0 90 0" color="#28384F">
-              <a-text position="0 .1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="R. KAPRODI"></a-text>
-              <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".6" white-space="pre" rotation="0 -90 0" value="PAI/PBS"></a-text>
-            </a-box>
-          </a-entity>
-
-          
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 0.2157" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.07528" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.14591" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-          <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.21548" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
-        </a-box>
+      
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 0.2157" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.07528" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.14591" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+      <a-entity gltf-model="../assets/jendela.glb" position="-0.52 -0.3 -0.21548" scale="0.035 0.07 4" rotation="0 90 0" shadow=""></a-entity>
+    </a-box>
 
 
-        <!-- LANTAI -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="130" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane>
-        
-        <!-- LAMPU --> 
-        <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 31 14"></a-entity>
-        <a-entity light="type: point; intensity: 0.5; distance: 40; decay: 2; castShadow:true;" position="-42 12 12"></a-entity>
-        <a-entity light="type: point; intensity: 0.5; distance: 40; decay: 2; castShadow:true;" position="42 12 12"></a-entity>
-        <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity>
+    <!-- LANTAI -->
+    <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="130" height="50" color="#eeb" shadow="receive: true" material="shader:phong; reflectivity: 0.9; shininess: 30; src: ../keramik.jpg; repeat: 80 40 "></a-plane> -->
+    
+    <!-- LAMPU --> 
+    <!-- <a-entity light="type: point; intensity: 0.65; distance: 70; decay: 2; castShadow:true;" position="1 31 14"></a-entity>
+    <a-entity light="type: point; intensity: 0.5; distance: 40; decay: 2; castShadow:true;" position="-42 12 12"></a-entity>
+    <a-entity light="type: point; intensity: 0.5; distance: 40; decay: 2; castShadow:true;" position="42 12 12"></a-entity>
+    <a-entity light="type: ambient; color: #fff; intensity: .65"></a-entity> -->
 
-        
-        <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
-        <a-camera></a-camera>
-        
+    
+    <!-- <a-entity camera look-controls position="0 14 -2"></a-entity> -->
+    <a-camera></a-camera>
+    
+</a-entity>
         <!-- <a-camera wasd-controls-enabled="false" position="0 25 5"></a-camera> -->
       </a-scene>
 
