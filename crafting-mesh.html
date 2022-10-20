@@ -14,11 +14,38 @@
     <a-scene id="scene" shadow="type: pcfsoft;" background="color: #333;" stats>
 
         <a-entity position="0 1 0">
-            <a-box position="0 0 0" scale=".5 1.2 .2"></a-box>
-            <a-box position="0 0 0" scale="1.2 .5 .2"></a-box>
-            <a-text position="0 -1 .2" align="center" side="double" scale="1 1 1" value="KEDOKTERAN"></a-text>
+            <a-entity rotation="0 0 30" position="-.3 .2 0">
+                <a-cone color="tomato" radius-bottom=".8" radius-top="0.3" position="0 0 0" scale="0.6 0.6 0.6"></a-cone>
+                <a-cylinder scale="0.18 0.4 0.18" position="0 0.5 0" material="opacity: 0.6" geometry=""></a-cylinder>
+            </a-entity>
+            <a-entity rotation="0 0 60" position="-.05 -.3 0">
+                <a-sphere scale=".3 .3 .3" position="1 0 0" color="purple"></a-sphere>
+                <a-cylinder scale="0.15 0.4 0.15" position="1 0.4 0" material="opacity: 0.6" geometry=""></a-cylinder>
+            </a-entity>
+            <a-box position="0 -.5 0" scale="1.6 .1 1.6"></a-box>
         </a-entity>
 
+        <a-entity position="0 1 0">
+            <a-box position="0 0 0" scale="1.6 1.5 .1"></a-box>
+            <a-box position="0 0 0" scale=".5 1.2 .2" color="red"></a-box>
+            <a-box position="0 0 0" scale="1.2 .5 .2" color="red"></a-box>
+        </a-entity>
+
+        <a-entity position="0 1 0">
+            <a-entity position="0 0 0" rotation="-70 0 0">
+                <a-box position="0 0 0" scale="1 1 .15"></a-box>
+                <a-box position="0 0 -0.1" scale="1.1 1.05 0.05" material="color: #4f8ae8" geometry=""></a-box>
+                <a-box position="0 0 0.1" scale="1.1 1.05 0.05" material="color: #4f8ae8" geometry=""></a-box>
+                <a-box position="0.525 0 0.00435" scale="0.05 1.05 0.16" material="color: #4f8ae8" geometry=""></a-box>
+            </a-entity>
+    
+            <a-box position=".5 .7 .4" material="flatShading: true" geometry="primitive: cylinder; segmentsHeight: 20; segmentsRadial: 8" scale="0.1 1 0.1" rotation="0 -34.5 -60" color="#eedf7c">
+                <a-box position="0 0.6 0" material="flatShading: true; color: #77abfd" geometry="primitive: cylinder; segmentsHeight: 20; segmentsRadial: 8" scale="1 0.2 1" rotation=""></a-box>
+                <a-box material="color: #e6d4ad" geometry="primitive: cone; radiusTop: 0.2; segmentsRadial: 8" rotation="0 0 180" scale="1 0.3 1" position="0 -0.65 0"></a-box>
+                <a-box material="color: #424242" geometry="primitive: cone; radiusTop: 0.018; segmentsRadial: 8" rotation="0 0 180" scale="0.2 0.08 0.2" position="0 -0.84 0"></a-box>
+            </a-box>    
+        </a-entity>
+        
         <a-box position="0 2 -10" color="red">
             <a-text position="0 .1 0" scale=".5 .5 1" align="center" z-offset=".51" white-space="pre" value="RUANG" rotation="0 0 0"></a-text>
               <a-text position="0 -.1 0" scale=".6 .6 1" align="center" z-offset=".51" white-space="pre" value="SERBAGUNA" rotation="0 0 0"></a-text>
